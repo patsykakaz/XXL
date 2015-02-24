@@ -1,70 +1,76 @@
 @charset "UTF-8";
 
 body{
-	background-color: #e7eaed;
-	padding: 30px 0 30px 0;
+padding: 15px 0 15px 0;
 }
 img{
-	max-width: 100%;
+max-width: 100%;
 }
 
 #navbar{
-	height: 120px;
-	margin-top: 30px;
-	background-color: white;
-	border-bottom: 1px solid #cad1d7;
-	color: rgb(40,50,108);
+    height: 120px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #cad1d7;
+    background-color: rgb(249,249,249);
+    color: rgb(40,50,108);
 }
 #navbar img{
-	height: 120px;
-	border-radius: 0 3px 3px 0;
+    height: 120px;
+    border-radius: 0 3px 3px 0;
 }
 #menu{
-	float: right;
+    float: right;
 }
 .slot{
-	display: inline-block;
-	/*height: 100px;*/
-	width: 100px;
-	padding: 20px;
-	padding-top: 80px;
+    display: inline-block;
+    width: 100px;
+    padding: 20px;
+    padding-top: 80px;
 }
 
 .box{
-	overflow: hidden;
-	margin-top: 30px;
-	background-color: white;
-	border-bottom: 1px solid #cad1d7;
+    overflow: hidden;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(249,249,249);
+    border-bottom: 1px solid #cad1d7;
+    color: rgb(40,50,108);
 }
 .smallbox{
-	height: 200px;
+    height: 200px;
 }
 .bigbox{
-	height: 430px;
+    height: 430px;
 }
 .blackbox{
-	background-color: rgb(8,11,15);
-	color: white;
+    background-color: rgb(8,11,15);
+    color: white;
+}
+
+#pubRow{
+    border-left: 1px dotted;
+    border-color: #cad1d7;
 }
 
 .layer-img{
-	overflow: hidden;
+    overflow: hidden;
 }.layer-img img{
-	position: relative;
-	min-width: 100%;
-	min-height: 100%;
+    position: relative;
+    min-width: 100%;
+    min-height: 100%;
     transition: all .5s ease-in-out;
     transform: scale(1);
 }.layer-img:hover img{
     transform: scale(1.15);
 }
 .item-caption{
-	height: 80px;
-	padding: 15px;
+    height: 80px;
+    padding: 15px;
 }
 .item-caption h3, .item-caption h4{
-	margin: 0;
-	font-size: 14px;
+    margin: 0;
+    font-size: 14px;
 }
 
 

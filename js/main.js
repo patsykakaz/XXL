@@ -16,7 +16,7 @@ $(document).ready(function(){
         if(BlackBoxMarker < ($('.box').length)/4){
             randNum = Math.floor((Math.random()*3)+1);
             if(randNum == 3 && !($('.box:eq('+i+')').hasClass('bigbox'))){
-                $('.box:eq('+i+')').addClass('blackbox');
+                // $('.box:eq('+i+')').addClass('blackbox');
                 BlackBoxMarker+=1; 
             }
         }
