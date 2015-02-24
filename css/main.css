@@ -59,6 +59,7 @@ img{
     transform: scale(1.15);
 }
 .item-caption{
+	height: 80px;
 	padding: 15px;
 }
 .item-caption h3, .item-caption h4{

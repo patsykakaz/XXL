@@ -3,12 +3,15 @@ $(document).ready(function(){
     i = 0;
     $('.box').each(function(){
         refHeight = $(this).height();
-        $(this).find('.layer-img').css('height', refHeight*0.7);
+        captionHeight = $(this).children('.item-caption').outerHeight();
+        $(this).find('.layer-img').css('height', refHeight-captionHeight);
         imgTarget = $(this).children('.layer-img').find('img');
-        if(imgTarget.height()>refHeight*0.7){
-            imgTarget.css('top', -(imgTarget.height()-refHeight*0.7)/2);
+        if(imgTarget.height()>refHeight){
+            imgTarget.css('bottom', (imgTarget.height()-refHeight)/2);
+        }else{
+        	// imgTarget.css('height', imgTarget.height()-captionHeight+'px');
         }
-        $(this).children('.item-caption').css('height', refHeight*0.3);
+        // $(this).children('.item-caption').css('height', captionHeight);
 
         if(BlackBoxMarker < ($('.box').length)/4){
             randNum = Math.floor((Math.random()*3)+1);
