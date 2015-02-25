@@ -23,7 +23,7 @@ img{
     margin-top: 20px;
 }
 #topNav{
-    height: 30px;
+    height: 15px;
     background-color: rgba(82,51,111,.9);
     margin-bottom: 15px;
 }
@@ -88,7 +88,7 @@ img{
     transform: scale(1.1);
 }
 .item-caption{
-    height: 80px;
+    height: 70px;
     padding: 15px;
 }
 .item-caption h3, .item-caption h4{
@@ -97,4 +97,22 @@ img{
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.thumbnail{
+	padding: 10px;
+}
 

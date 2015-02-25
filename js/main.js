@@ -22,4 +22,7 @@ $(document).ready(function(){
         }
         i +=1 ;
     });
+    $('.box').each(function(){
+        $(this).addClass('thumbnail');
+    });
 });
