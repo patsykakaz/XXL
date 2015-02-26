@@ -10,9 +10,6 @@ $(document).ready(function(){
             illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
         }
 
-
-
-
         $(this).addClass('thumbnail');
     });
 });
