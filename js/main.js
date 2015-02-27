@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(window).load(function(){
     BlackBoxMarker = 0;
     i = 0;
     $('.box').each(function(){
@@ -12,4 +12,18 @@ $(document).ready(function(){
 
         $(this).addClass('thumbnail');
     });
+});
+
+$(document).ready(function(){
+
+    $('.container-fluid').width($('#main').width());
+
+    $('.navbar-nav').each(function(){
+        $(this).css('margin-top', $('.navbar').height()-$(this).outerHeight());
+    });
+    $('.navbar-form').css('margin-top', ($('.navbar').height()-$('.navbar-form').outerHeight())/1);
+});
+
+$(window).resize(function(){
+$('.container-fluid').width($('#main').width());
 });
