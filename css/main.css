@@ -9,6 +9,19 @@
 body{
     padding: 0 0 15px 0;
     background-color: #f8f8f8;
+    background: url('../img/test_habillage.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#adLayer{
+    margin: auto;
+    margin-top: 200px;
+    max-width: 970px;
+    box-shadow: 2px 2px 2px 2px grey;
+    background-color: #f8f8f8;
+}
+#adLayer .container{
+    max-width: 970px;
 }
 
 

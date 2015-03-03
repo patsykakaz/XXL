@@ -25,5 +25,5 @@ $(document).ready(function(){
 });
 
 $(window).resize(function(){
-$('.container-fluid').width($('#main').width());
+    $('.container-fluid').width($('#main').width());
 });
