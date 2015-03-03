@@ -41,7 +41,7 @@ $(document).ready(function(){
     if($('#adLayer').length){
         $('body').css('padding-bottom', '0');
         $('#navBorder').css('margin-bottom', '0');
-        $('.container').css('box-shadow', '0 2px 10px rgba(0, 0, 0, 0.5)');
+        $('.container').addClass('shadowForContainer');
     }
 });
 // ./HABILLAGE
