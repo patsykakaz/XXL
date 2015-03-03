@@ -7,6 +7,10 @@
     orange: rgb(205,97,0);
 */
 
+.container{
+    background-color: #f8f8f8;
+}
+
 .fa-caret-down{
     margin-left: 5px;
 }
