@@ -1,7 +1,7 @@
 $(window).load(function(){
     $('.box').each(function(){
         layer = $(this).children('.layer-img');
-        illustration = layer.children('.illustration');
+        illustration = layer.children('a').children('.illustration');
         if(illustration.width()<layer.width()){
             illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
         }
