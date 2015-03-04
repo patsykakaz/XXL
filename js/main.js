@@ -5,7 +5,7 @@ $(window).load(function(){
         if(illustration.width()<layer.width()){
             illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
         }
-        $(this).addClass('thumbnail');
+//        $(this).addClass('thumbnail');
     });
 });
 
