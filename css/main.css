@@ -16,11 +16,11 @@ body{
     padding-bottom: 20px;
     margin: auto;
     box-shadow: 1px 1px 2px 0px rgb(170,170,170);
-/*    background: url('../img/test_habillage.jpg') no-repeat center center;
+    background: url('../img/test_habillage.jpg') no-repeat center center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;*/
+    -o-background-size: cover;
 }
 #pubLayer .container{
     max-width: 970px;
