@@ -11,12 +11,12 @@ $(window).load(function(){
 
 $(document).ready(function(){
 
-    $('.container-fluid').width($('#main').width());
+    $('#masterNav .container-fluid').width($('#main').width());
 
-    $('.navbar-nav').each(function(){
-        $(this).css('margin-top', $('.navbar').height()-$(this).outerHeight());
+    $('#masterNav .navbar-nav').each(function(){
+        $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
     });
-    $('.navbar-form').css('margin-top', ($('.navbar').height()-$('.navbar-form').outerHeight())/1);
+    $(this).children('.navbar-form').css('margin-top', $('.navbar').height()-$('.navbar-form').outerHeight());
 });
 
 $(window).resize(function(){
