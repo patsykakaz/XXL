@@ -1,4 +1,13 @@
+
+// Resizing box images
 $(window).load(function(){
+    boxImageSizing();
+});
+$(window).resize(function(){
+    boxImageSizing();
+});
+// ./Resizing box images
+function boxImageSizing(){
     $('.box').each(function(){
         layer = $(this).children('.layer-img');
         illustration = layer.children('a').children('.illustration');
@@ -6,12 +15,12 @@ $(window).load(function(){
             illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
         }
     });
-});
+}
 
 $(document).ready(function(){
-
+    // ? 
     $('#masterNav .container-fluid').width($('#main').width());
-
+    // aligne les .navbar-nav de masterNav en bas de la navbar
     $('#masterNav .navbar-nav').each(function(){
         $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
     });
@@ -19,9 +28,6 @@ $(document).ready(function(){
     $('#masterNav img').css('margin-top', ($('#masterNav').outerHeight()-$('#masterNav img').outerHeight())/2);
 });
 
-$(window).resize(function(){
-    $('.container-fluid').width($('#main').width());
-});
 
 // HABILLAGE
 $(document).ready(function(){
@@ -34,6 +40,8 @@ $(document).ready(function(){
 // ./HABILLAGE
 
 
+
+// Deploiment contentNav
 $(document).ready(function(){
     // layer pour éviter le scintillement de la navbar lors du déploiement 
     $('#contentNav_layer').css('height', $('#contentNav').outerHeight());
@@ -45,17 +53,20 @@ $(document).ready(function(){
 $(document).scroll(function(){
     nav = $('#contentNav');
     logo = $('#logo_deploy');
+    // Point de déploiment de la navBar secondaire
     trigger = $('#contentNav_layer').offset().top;
-    nav.children('.container-fluid').css('width', $('#main').outerWidth());
     if($(document).scrollTop() >= trigger){
         nav.addClass('deployNav');
         setTimeout(function(){
             nav.css('top', '0');
             logo.addClass('on');
         },200);
+        nav.children('.container-fluid').css('width', $('#main').outerWidth());
     }else{
             logo.removeClass('on');
             nav.removeClass('deployNav');
             nav.css('top', '');
+            nav.children('.container-fluid').css('width', 'auto');
     }
 });
+// ./Deploiment contentNav

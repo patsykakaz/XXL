@@ -9,6 +9,7 @@
 
 .container{
     background-color: white;
+    /*min-width: 970px;*/
 }
 
 .fa-caret-down{
@@ -32,7 +33,7 @@
     padding: 0;
 }
 .navbar-brand img{
-    height: 60px;
+    height: 80px;
     margin: 0;
 }
 
@@ -62,7 +63,7 @@
 #contentNav{
     background-color: white;
     border: none;
-    /*top: 0;*/
+    border-bottom: 1px dotted #cad1d7;
     -moz-transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
@@ -75,6 +76,7 @@
     z-index: 99;
     width: 100%;
     border: 1px solid #e7e7e7;
+    border-bottom: none;
     background-color: #f8f8f8;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,.1);
 }
@@ -97,4 +99,13 @@
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+
+
+
+
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    background-color: #f8f8f8;
+    border-bottom: 5px solid rgb(82,51,111);
 }
