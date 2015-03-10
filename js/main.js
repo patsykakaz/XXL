@@ -5,7 +5,6 @@ $(window).load(function(){
         if(illustration.width()<layer.width()){
             illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
         }
-//        $(this).addClass('thumbnail');
     });
 });
 
@@ -16,7 +15,8 @@ $(document).ready(function(){
     $('#masterNav .navbar-nav').each(function(){
         $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
     });
-    $(this).children('.navbar-form').css('margin-top', $('.navbar').height()-$('.navbar-form').outerHeight());
+    // Logo principal
+    $('#masterNav img').css('margin-top', ($('#masterNav').outerHeight()-$('#masterNav img').outerHeight())/2);
 });
 
 $(window).resize(function(){
@@ -35,20 +35,27 @@ $(document).ready(function(){
 
 
 $(document).ready(function(){
+    // layer pour éviter le scintillement de la navbar lors du déploiement 
     $('#contentNav_layer').css('height', $('#contentNav').outerHeight());
+    // positionnement du logo pour la deployNav
+    $('#logo_deploy').css('left', ($(window).width()-$('#main').outerWidth())/2-$('#logo_deploy').outerWidth());
+    // Padding automatique selon la taille du logo
+    $('#logo_deploy').css('padding-top', ($('#contentNav').outerHeight()-$('#logo_deploy').outerHeight())/2);
 })
 $(document).scroll(function(){
     nav = $('#contentNav');
+    logo = $('#logo_deploy');
     trigger = $('#contentNav_layer').offset().top;
-    if($(document).scrollTop() > trigger){
+    nav.children('.container-fluid').css('width', $('#main').outerWidth());
+    if($(document).scrollTop() >= trigger){
         nav.addClass('deployNav');
         setTimeout(function(){
             nav.css('top', '0');
+            logo.addClass('on');
         },200);
-        nav.children('.container-fluid').css('width', $('#main').outerWidth());
     }else{
+            logo.removeClass('on');
             nav.removeClass('deployNav');
             nav.css('top', '');
-            nav.children('.container-fluid').css('width', $('#main').outerWidth());
     }
 });
