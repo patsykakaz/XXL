@@ -50,7 +50,26 @@
 }
 
 
+#contentNav_layer{
+    overflow: hidden;
+}
 #contentNav{
     background-color: white;
     border: none;
+    /*top: 0;*/
+    -moz-transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+#contentNav.deployNav{
+    position: fixed;
+    top: -60px;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    border: 1px solid #e7e7e7;
+}
+#contentNav.deployNav.fullDeploy{
+    top: 0;
 }

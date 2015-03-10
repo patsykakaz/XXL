@@ -32,3 +32,23 @@ $(document).ready(function(){
     }
 });
 // ./HABILLAGE
+
+
+$(document).ready(function(){
+    $('#contentNav_layer').css('height', $('#contentNav').outerHeight());
+})
+$(document).scroll(function(){
+    nav = $('#contentNav');
+    trigger = $('#contentNav_layer').offset().top;
+    if($(document).scrollTop() > trigger){
+        nav.addClass('deployNav');
+        setTimeout(function(){
+            nav.css('top', '0');
+        },200);
+        nav.children('.container-fluid').css('width', $('#main').outerWidth());
+    }else{
+            nav.removeClass('deployNav');
+            nav.css('top', '');
+            nav.children('.container-fluid').css('width', $('#main').outerWidth());
+    }
+});
