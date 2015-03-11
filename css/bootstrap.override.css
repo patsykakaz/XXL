@@ -69,6 +69,9 @@
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
+#contentNav .container-fluid{
+    padding: 0 15px 0 0;
+}
 #contentNav.deployNav{
     position: fixed;
     top: -60px;
@@ -100,9 +103,6 @@
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
 }
-
-
-
 
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{

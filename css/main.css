@@ -19,10 +19,6 @@ body{
     box-shadow: 1px 1px 2px 0px rgb(170,170,170);
     background: url('../img/test_habillage.jpg') no-repeat;
     background-position: center top;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
 }
 #pubLayer .container{
     max-width: 970px;
@@ -105,10 +101,4 @@ body{
     margin: 0;
     font-size: 14px;
     color: #C0C0C0;
-}
-
-
-.container-fluid{
-
-    padding: 0 15px 0 0;
 }
