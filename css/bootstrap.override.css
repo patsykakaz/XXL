@@ -66,10 +66,10 @@
     background-color: white;
     border: none;
     border-bottom: 1px dashed rgba(124,108,148,.7);
-    -moz-transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-    -o-transition: all 0.3s linear;
-    transition: all 0.3s linear;
+    -moz-transition: top 0.3s linear;
+    -webkit-transition: top 0.3s linear;
+    -o-transition: top 0.3s linear;
+    transition: top 0.3s linear;
 }
 #contentNav .container-fluid{
     padding: 0 15px 0 0;

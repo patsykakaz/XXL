@@ -16,16 +16,7 @@ $(window).resize(function(){
     boxImageSizing();
     placement_habillage();
 });
-// ./Resizing box images
-function boxImageSizing(){
-    $('.box').each(function(){
-        layer = $(this).children('.layer-img');
-        illustration = layer.children('a').children('.illustration');
-        if(illustration.width()<layer.width()){
-            illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
-        }
-    });
-}
+
 
 $(document).ready(function(){
     // Calle la largeur de #masterNav sur celle de #main
@@ -100,10 +91,19 @@ function placement_habillage(){
 }
 // ./Placement HABILLAGE
 
-
 function place_navbarForm(){
     target = $('#contentNav .navbar-form');
     target.css('margin-top', ($('#contentNav .container-fluid').height()-target.outerHeight())/2);
 }
 
-
+// Resizing box images
+function boxImageSizing(){
+    $('.box').each(function(){
+        layer = $(this).children('.layer-img');
+        illustration = layer.children('a').children('.illustration');
+        if(illustration.width()<layer.width()){
+            illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
+        }
+    });
+}
+// ./Resizing box images
