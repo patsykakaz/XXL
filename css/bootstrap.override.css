@@ -5,11 +5,13 @@
     purple: rgb(82,51,111);
     blue: rgb(61,62,127);
     orange: rgb(205,97,0);
+    lightPurple: rgb(124,108,148);
 */
+.form-group input{
+    border-radius: 0;
+}
 
 .container{
-    background-color: white;
-    /*min-width: 970px;*/
 }
 
 .fa-caret-down{
@@ -25,15 +27,15 @@
     z-index: 101;
     width: 100%;
     background-color: black;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.5);
 }
 #masterNav .navbar-brand{
     overflow: hidden;
-    height: 80px;
+    height: 60px;
     padding: 0;
 }
 .navbar-brand img{
-    height: 80px;
+    height: 50px;
     margin: 0;
 }
 
@@ -58,12 +60,12 @@
 
 
 #contentNav_layer{
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 #contentNav{
     background-color: white;
     border: none;
-    border-bottom: 1px dotted #cad1d7;
+    border-bottom: 1px dashed rgba(124,108,148,.7);
     -moz-transition: all 0.3s linear;
     -webkit-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
@@ -107,5 +109,20 @@
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
     background-color: #f8f8f8;
-    border-bottom: 5px solid rgb(82,51,111);
+    border-bottom: 5px solid rgb(124,108,148);
+}
+
+.navbar-nav>li>a{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}.deployNav .navbar-nav>li>a{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-default .navbar-nav>li>a{
+    color: rgb(124,108,148);
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    color: rgb(61,62,127);
 }

@@ -4,12 +4,19 @@
     purple: rgb(82,51,111);
     blue: rgb(61,62,127);
     orange: rgb(205,97,0);
+    lightPurple: rgb(124,108,148);
 */
 
 body{
     padding: 0 0 15px 0;
     /*background-color: #f8f8f8;*/
     background-color: white;
+}
+
+#navBorder{
+    height: 10px;
+    background-color: rgba(82,51,111,.85);
+    margin-bottom: 15px;
 }
 
 #pubLayer{
@@ -27,14 +34,17 @@ body{
     box-shadow: 1px 1px 2px 2px rgba(0,0,0,.2);
 }
 
-#navBorder{
-    height: 15px;
-    background-color: rgb(93,71,125);
-    margin-bottom: 15px;
+#main{
+    overflow: hidden;
+    /*border-radius: 5px 5px 0 0;*/
+    background-color: white;
 }
-#menu{
-    float: right;
+
+#nav2{
+    position: relative;
+    top: 1px;
 }
+
 .slot{
     display: inline-block;
     width: 100px;
@@ -49,7 +59,6 @@ body{
     background-color: #f8f8f8;
     border: 1px solid rgba(0,0,0,.065);
     border-bottom: 1px solid #cad1d7;
-    color: rgb(82,51,111);
     border-radius: 0 0 3px 3px;
 }
 .smallbox{
@@ -58,10 +67,15 @@ body{
 .bigbox{
     height: 430px;
 }
+.revueBox{
+    height: auto;
+}.revueBox img{
+    max-width: 100%;
+}
 
 #pubRow{
-    border-left: 1px dotted;
-    border-color: #cad1d7;
+    border-left: 1px dashed;
+    border-color: rgba(124,108,148,.7);
 }
 
 .layer-img{
@@ -96,9 +110,10 @@ body{
     font-family: 'Slabo 27px', serif;
     margin: 0;
     font-size: 16px;
+    color: rgb(124,108,148);
 }.item-caption h4{
     font-family: 'Slabo 27px', serif;
     margin: 0;
     font-size: 14px;
-    color: #C0C0C0;
+    color: rgba(124,108,148,.7);
 }
