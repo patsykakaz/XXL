@@ -1,5 +1,4 @@
 
-// Resizing box images
 
 $(document).ready(function(){
     // $('.box').each(function(){
@@ -10,11 +9,16 @@ $(document).ready(function(){
 $(window).load(function(){
     boxImageSizing();
     placement_habillage();
-    place_navbarForm();
+    place_shifting_elements();
+    place_static_elements();
 });
 $(window).resize(function(){
     boxImageSizing();
     placement_habillage();
+    place_shifting_elements();
+});
+$(document).scroll(function(){
+    place_shifting_elements();
 });
 
 
@@ -25,7 +29,7 @@ $(document).ready(function(){
     $('#masterNav .navbar-nav').each(function(){
         $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
     });
-    // Logo principal
+    // alignement vertical Logo principal
     $('#masterNav img').css('margin-top', ($('#masterNav').outerHeight()-$('#masterNav img').outerHeight())/2);
 });
 
@@ -44,12 +48,6 @@ $(document).ready(function(){
 
 // Deploiment contentNav
 $(document).ready(function(){
-    // layer pour éviter le scintillement de la navbar lors du déploiement 
-    $('#contentNav_layer').css('height', $('#contentNav').outerHeight());
-    // positionnement du logo pour la deployNav
-    $('#logo_deploy').css('left', ($(window).width()-$('#main').outerWidth())/2-$('#logo_deploy').outerWidth());
-    // Padding automatique selon la taille du logo
-    $('#logo_deploy').css('padding-top', ($('#contentNav').outerHeight()-$('#logo_deploy').outerHeight())/2-10);
 })
 $(document).scroll(function(){
     nav = $('#contentNav');
@@ -57,15 +55,15 @@ $(document).scroll(function(){
     // Point de déploiment de la navBar secondaire
     trigger = $('#contentNav_layer').offset().top;
     if($(document).scrollTop() >= trigger){
-        place_navbarForm();
         nav.addClass('deployNav');
         setTimeout(function(){
             nav.css('top', '0');
-            logo.addClass('on');
+            if($(window).width()-$('#main').outerWidth() >= 200){
+                logo.addClass('on');
+            }
         },200);
         nav.children('.container-fluid').css('width', $('#main').outerWidth());
     }else if($(document).scrollTop() <= trigger+50){
-        place_navbarForm();
             logo.removeClass('on');
             nav.removeClass('deployNav');
             nav.css('top', '');
@@ -77,24 +75,21 @@ $(document).scroll(function(){
 
 // Placement HABILLAGE
 function placement_habillage(){
-    target = $('#pubLayer');
-    ratioBG = 970/1870;
-    // if($(window).width()<970){
-        mainWidth = $('#main').outerWidth();
-        windowWidth = $(window).width();
-        target.css('background-size', (mainWidth/windowWidth)/ratioBG*100+'%');
-        $('#pubLayer').css('padding-top', 150+'px');
-    // }
-    if($(window).width()<970){
-        $('#pubLayer').css('padding-top', ($('#main').outerWidth()/970)*150+'px');
+    if($('#pubLayer.on').length){
+        target = $('#pubLayer');
+        ratioBG = 970/1870;
+        // if($(window).width()<970){
+            mainWidth = $('#main').outerWidth();
+            windowWidth = $(window).width();
+            target.css('background-size', (mainWidth/windowWidth)/ratioBG*100+'%');
+            $('#pubLayer').css('padding-top', 150+'px');
+        // }
+        if($(window).width()<970){
+            $('#pubLayer').css('padding-top', ($('#main').outerWidth()/970)*150+'px');
+        }
     }
 }
 // ./Placement HABILLAGE
-
-function place_navbarForm(){
-    target = $('#contentNav .navbar-form');
-    target.css('margin-top', ($('#contentNav .container-fluid').height()-target.outerHeight())/2);
-}
 
 // Resizing box images
 function boxImageSizing(){
@@ -107,3 +102,19 @@ function boxImageSizing(){
     });
 }
 // ./Resizing box images
+
+function place_static_elements(){
+    // layer pour éviter le scintillement de la navbar lors du déploiement 
+    $('#contentNav_layer').css('height', $('#contentNav').outerHeight());
+    // Padding automatique selon la taille du logo
+    $('#logo_deploy').css('padding-top', ($('#contentNav').outerHeight()-$('#logo_deploy').outerHeight())/2-5);
+}
+
+function place_shifting_elements(){
+    // positionnement du logo pour la deployNav
+    $('#logo_deploy').css('left', ($(window).width()-$('#main').outerWidth())/2-$('#logo_deploy').outerWidth());
+
+    // Alignement vertical de navbar-form
+    target = $('#contentNav .navbar-form');
+    target.css('margin-top', ($('#contentNav .container-fluid').height()-target.outerHeight())/2);
+}

@@ -65,7 +65,7 @@
 #contentNav{
     background-color: white;
     border: none;
-    border-bottom: 1px dashed rgba(124,108,148,.7);
+    border-bottom: 1px dashed rgb(200,200,200);
     -moz-transition: top 0.3s linear;
     -webkit-transition: top 0.3s linear;
     -o-transition: top 0.3s linear;
@@ -90,7 +90,7 @@
     position: fixed;
     top: -60px;
     z-index: 100;
-    width: 120px;
+    width: 100px;
     height: 50px;
     -moz-transition: all 0s linear;
     -webkit-transition: all 0s linear;
