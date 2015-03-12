@@ -23,14 +23,6 @@ $(document).scroll(function(){
 
 
 $(document).ready(function(){
-    // Calle la largeur de #masterNav sur celle de #main
-    $('#masterNav .container-fluid').width($('#main').width());
-    // aligne les .navbar-nav de masterNav en bas de la navbar
-    $('#masterNav .navbar-nav').each(function(){
-        $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
-    });
-    // alignement vertical Logo principal
-    $('#masterNav img').css('margin-top', ($('#masterNav').outerHeight()-$('#masterNav img').outerHeight())/2);
 });
 
 
@@ -104,13 +96,27 @@ function boxImageSizing(){
 // ./Resizing box images
 
 function place_static_elements(){
+    if($('#pubLayer').hasClass('on')){
+        $('body').css('background-color', 'white');
+    }
     // layer pour éviter le scintillement de la navbar lors du déploiement 
-    $('#contentNav_layer').css('height', $('#contentNav').outerHeight());
+    $('#contentNav_layer').css('min-height', $('#contentNav').outerHeight());
     // Padding automatique selon la taille du logo
     $('#logo_deploy').css('padding-top', ($('#contentNav').outerHeight()-$('#logo_deploy').outerHeight())/2-5);
 }
 
 function place_shifting_elements(){
+
+    // alignement vertical Logo principal
+    $('#masterNav img').css('margin-top', ($('#masterNav').outerHeight()-$('#masterNav img').outerHeight())/2);
+    // Calle la largeur de #masterNav sur celle de #main
+    $('#masterNav .container-fluid').width($('#main').width());
+    // aligne les .navbar-nav de masterNav en bas de la navbar
+    // !!!!! ADAPTER POUR MOBILE !!!!!
+    $('#masterNav .navbar-nav').each(function(){
+        $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
+    });
+
     // positionnement du logo pour la deployNav
     $('#logo_deploy').css('left', ($(window).width()-$('#main').outerWidth())/2-$('#logo_deploy').outerWidth());
 

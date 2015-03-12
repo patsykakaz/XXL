@@ -28,6 +28,7 @@
     width: 100%;
     background-color: black;
     box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.5);
+    border: none;
 }
 #masterNav .navbar-brand{
     overflow: hidden;
@@ -62,6 +63,9 @@
 #contentNav_layer{
     /*overflow: hidden;*/
 }
+.off #contentNav_layer{
+    box-shadow: 0 0 1px 1px rgba(0,0,0,.1);
+}
 #contentNav{
     background-color: white;
     border: none;
@@ -71,8 +75,9 @@
     -o-transition: top 0.3s linear;
     transition: top 0.3s linear;
 }
+
 #contentNav .container-fluid{
-    padding: 0 15px 0 0;
+    /*padding: 0 15px 0 0;*/
 }
 #contentNav.deployNav{
     position: fixed;
