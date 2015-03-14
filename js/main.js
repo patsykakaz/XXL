@@ -1,6 +1,13 @@
 
 
 $(document).ready(function(){
+    // HABILLAGE
+        if($('#pubLayer').length){
+            $('body').css('padding-bottom', '0');
+            $('#navBorder').css('margin-bottom', '0');
+            $('.container').addClass('shadowForContainer');
+        }
+    // ./HABILLAGE
     // $('.box').each(function(){
         // $(this).addClass('thumbnail');
     // });
@@ -9,91 +16,22 @@ $(document).ready(function(){
 $(window).load(function(){
     boxImageSizing();
     placement_habillage();
-    place_shifting_elements();
     place_static_elements();
+    place_shifting_elements();
 });
 $(window).resize(function(){
     boxImageSizing();
     placement_habillage();
     place_shifting_elements();
+    deploiment_contentNav();
 });
 $(document).scroll(function(){
     place_shifting_elements();
+    deploiment_contentNav();
 });
 
 
-$(document).ready(function(){
-});
 
-
-// HABILLAGE
-$(document).ready(function(){
-    if($('#pubLayer').length){
-        $('body').css('padding-bottom', '0');
-        $('#navBorder').css('margin-bottom', '0');
-        $('.container').addClass('shadowForContainer');
-    }
-});
-// ./HABILLAGE
-
-
-
-// Deploiment contentNav
-$(document).ready(function(){
-})
-$(document).scroll(function(){
-    nav = $('#contentNav');
-    logo = $('#logo_deploy');
-    // Point de déploiment de la navBar secondaire
-    trigger = $('#contentNav_layer').offset().top;
-    if($(document).scrollTop() >= trigger){
-        nav.addClass('deployNav');
-        setTimeout(function(){
-            nav.css('top', '0');
-            if($(window).width()-$('#main').outerWidth() >= 200){
-                logo.addClass('on');
-            }
-        },200);
-        nav.children('.container-fluid').css('width', $('#main').outerWidth());
-    }else if($(document).scrollTop() <= trigger+50){
-            logo.removeClass('on');
-            nav.removeClass('deployNav');
-            nav.css('top', '');
-            nav.children('.container-fluid').css('width', 'auto');
-    }
-});
-// ./Deploiment contentNav
-
-
-// Placement HABILLAGE
-function placement_habillage(){
-    if($('#pubLayer.on').length){
-        target = $('#pubLayer');
-        ratioBG = 970/1870;
-        // if($(window).width()<970){
-            mainWidth = $('#main').outerWidth();
-            windowWidth = $(window).width();
-            target.css('background-size', (mainWidth/windowWidth)/ratioBG*100+'%');
-            $('#pubLayer').css('padding-top', 150+'px');
-        // }
-        if($(window).width()<970){
-            $('#pubLayer').css('padding-top', ($('#main').outerWidth()/970)*150+'px');
-        }
-    }
-}
-// ./Placement HABILLAGE
-
-// Resizing box images
-function boxImageSizing(){
-    $('.box').each(function(){
-        layer = $(this).children('.layer-img');
-        illustration = layer.children('a').children('.illustration');
-        if(illustration.width()<layer.width()){
-            illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
-        }
-    });
-}
-// ./Resizing box images
 
 function place_static_elements(){
     if($('#pubLayer').hasClass('on')){
@@ -102,7 +40,7 @@ function place_static_elements(){
     // layer pour éviter le scintillement de la navbar lors du déploiement 
     $('#contentNav_layer').css('min-height', $('#contentNav').outerHeight());
     // Padding automatique selon la taille du logo
-    $('#logo_deploy').css('padding-top', ($('#contentNav').outerHeight()-$('#logo_deploy').outerHeight())/2-5);
+    $('#logo_deploy').css('padding-top', (56-$('#logo_deploy').height())/2);
 }
 
 function place_shifting_elements(){
@@ -122,5 +60,59 @@ function place_shifting_elements(){
 
     // Alignement vertical de navbar-form
     target = $('#contentNav .navbar-form');
-    target.css('margin-top', ($('#contentNav .container-fluid').height()-target.outerHeight())/2);
+    // target.css('margin-top', ($('#contentNav .container-fluid').height()-target.outerHeight())/2);
 }
+
+// Resizing box images
+function boxImageSizing(){
+    $('.box').each(function(){
+        layer = $(this).children('.layer-img');
+        illustration = layer.children('a').children('.illustration');
+        if(illustration.width()<layer.width()){
+            illustration.css('height', 'auto').css('width', '100%').css('bottom',(illustration.height()-layer.height())/2);
+        }
+    });
+}
+// ./Resizing box images
+
+// Placement HABILLAGE
+function placement_habillage(){
+    if($('#pubLayer.on').length){
+        target = $('#pubLayer');
+        ratioBG = 970/1870;
+        // if($(window).width()<970){
+            mainWidth = $('#main').outerWidth();
+            windowWidth = $(window).width();
+            target.css('background-size', (mainWidth/windowWidth)/ratioBG*100+'%');
+            $('#pubLayer').css('padding-top', 150+'px');
+        // }
+        if($(window).width()<970){
+            $('#pubLayer').css('padding-top', ($('#main').outerWidth()/970)*150+'px');
+        }
+    }
+}
+// ./Placement HABILLAGE
+
+// Deploiment contentNav
+function deploiment_contentNav(){
+    nav = $('#contentNav');
+    logo = $('#logo_deploy');
+    // Point de déploiment de la navBar secondaire
+    trigger = $('#contentNav_layer').offset().top;
+    if($(document).scrollTop() >= trigger){
+        nav.addClass('deployNav');
+        setTimeout(function(){
+            nav.css('top', '0');
+            if($(window).width()-$('#main').outerWidth() >= 200){
+                logo.addClass('on');
+            }
+        },200);
+        nav.children('.container-fluid').css('width', $('#main').outerWidth());
+    }else if($(document).scrollTop() <= trigger+50){
+            logo.removeClass('on');
+            nav.removeClass('deployNav');
+            nav.css('top', '');
+            nav.children('.container-fluid').css('width', 'auto');
+    }
+}
+// ./Deploiment contentNav

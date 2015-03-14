@@ -40,8 +40,11 @@
     margin: 0;
 }
 
-.navbar-form{
-    padding: 6px 0 6px 0;
+#contentNav .navbar-form{
+    padding: 12px 0 0 0;
+    margin-bottom: 0;
+}#contentNav.deployNav .navbar-form{
+    padding: 2px 0 0 0;
     margin-bottom: 0;
 }
 
