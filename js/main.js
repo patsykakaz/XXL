@@ -39,8 +39,6 @@ function place_static_elements(){
     if($('#pubLayer').hasClass('on')){
         $('body').css('background-color', 'white');
     }
-    // layer pour éviter le scintillement de la navbar lors du déploiement 
-    $('#contentNav_layer').css('min-height', $('#contentNav').outerHeight());
     // Padding automatique selon la taille du logo
     $('#logo_deploy').css('padding-top', (56-$('#logo_deploy').height())/2);
 }
@@ -96,10 +94,10 @@ function placement_habillage(){
 // ./Placement HABILLAGE
 
 function adapt_form_width(){
-    target = $('#contentNav .form-control');
+    target = $('#contentNav .form-group');
     button = $('#contentNav .btn');
     if($(window).width()>=768){
-        target.css('width', $('.smallbox:first').outerWidth()-button.outerWidth()-5);
+        target.css('width', $('.smallbox:first').outerWidth()-button.outerWidth()-12);
     }else{
         target.css('width', '');
     }
@@ -111,7 +109,7 @@ function deploiment_contentNav(){
     nav = $('#contentNav');
     logo = $('#logo_deploy');
     // Point de déploiment de la navBar secondaire
-    trigger = $('#contentNav_layer').offset().top;
+    trigger = $('#contentNav_layer').offset().top + $('#contentNav_layer').outerHeight();
     if($(document).scrollTop() >= trigger){
         nav.addClass('deployNav');
         setTimeout(function(){
@@ -121,7 +119,7 @@ function deploiment_contentNav(){
             }
         },200);
         nav.children('.container-fluid').css('width', $('#main').outerWidth());
-    }else{
+    }else if($(document).scrollTop() <= trigger - $('#contentNav_layer').height()){
             logo.removeClass('on');
             nav.removeClass('deployNav');
             nav.css('top', '');
