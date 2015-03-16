@@ -18,12 +18,14 @@ $(window).load(function(){
     placement_habillage();
     place_static_elements();
     place_shifting_elements();
+    adapt_form_width();
 });
 $(window).resize(function(){
     boxImageSizing();
     placement_habillage();
     place_shifting_elements();
     deploiment_contentNav();
+    adapt_form_width();
 });
 $(document).scroll(function(){
     place_shifting_elements();
@@ -92,6 +94,17 @@ function placement_habillage(){
     }
 }
 // ./Placement HABILLAGE
+
+function adapt_form_width(){
+    target = $('#contentNav .form-control');
+    button = $('#contentNav .btn');
+    if($(window).width()>=768){
+        target.css('width', $('.smallbox:first').outerWidth()-button.outerWidth()-5);
+    }else{
+        target.css('width', '');
+    }
+}
+
 
 // Deploiment contentNav
 function deploiment_contentNav(){
