@@ -121,7 +121,7 @@ function deploiment_contentNav(){
             }
         },200);
         nav.children('.container-fluid').css('width', $('#main').outerWidth());
-    }else if($(document).scrollTop() <= trigger+50){
+    }else{
             logo.removeClass('on');
             nav.removeClass('deployNav');
             nav.css('top', '');
