@@ -11,6 +11,7 @@ $(document).ready(function(){
     // $('.box').each(function(){
         // $(this).addClass('thumbnail');
     // });
+    // $('#pubLayer').wrap('<a href="www.google.com" target="blank"></a>')
 });
 
 $(window).load(function(){
@@ -36,8 +37,11 @@ $(document).scroll(function(){
 
 
 function place_static_elements(){
-    if($('#pubLayer').hasClass('on')){
+    if($('#pubLayer').length){
         $('body').css('background-color', 'white');
+        $('#main').addClass('pubOn');
+    }else{
+        $('#main').addClass('pubOff');
     }
     // Padding automatique selon la taille du logo
     $('#logo_deploy').css('padding-top', (56-$('#logo_deploy').height())/2);
@@ -77,17 +81,16 @@ function boxImageSizing(){
 
 // Placement HABILLAGE
 function placement_habillage(){
-    if($('#pubLayer.on').length){
+    if($('#pubLayer').length){
         target = $('#pubLayer');
         ratioBG = 970/1870;
         // if($(window).width()<970){
-            mainWidth = $('#main').outerWidth();
-            windowWidth = $(window).width();
-            target.css('background-size', (mainWidth/windowWidth)/ratioBG*100+'%');
-            $('#pubLayer').css('padding-top', 150+'px');
+        mainWidth = $('#main').outerWidth();
+        windowWidth = $(window).width();
+        target.css('background-size', (mainWidth/windowWidth)/ratioBG*100+'%');
         // }
         if($(window).width()<970){
-            $('#pubLayer').css('padding-top', ($('#main').outerWidth()/970)*150+'px');
+            $('#main').css('margin-top', ($('#main').outerWidth()/970)*150+'px');
         }
     }else{
         $('#pubRow .box:first').css('margin-top', '0');
