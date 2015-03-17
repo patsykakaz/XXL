@@ -89,6 +89,8 @@ function placement_habillage(){
         if($(window).width()<970){
             $('#pubLayer').css('padding-top', ($('#main').outerWidth()/970)*150+'px');
         }
+    }else{
+        $('#pubRow .box:first').css('margin-top', '0');
     }
 }
 // ./Placement HABILLAGE
