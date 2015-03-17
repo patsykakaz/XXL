@@ -8,16 +8,12 @@ $(document).ready(function(){
             $('.container').addClass('shadowForContainer');
         }
     // ./HABILLAGE
-    // $('.box').each(function(){
-        // $(this).addClass('thumbnail');
-    // });
-    // $('#pubLayer').wrap('<a href="www.google.com" target="blank"></a>')
+    place_static_elements();
 });
 
 $(window).load(function(){
     boxImageSizing();
     placement_habillage();
-    place_static_elements();
     place_shifting_elements();
     adapt_form_width();
 });
@@ -55,9 +51,11 @@ function place_shifting_elements(){
     $('#masterNav .container-fluid').width($('#main').width());
     // aligne les .navbar-nav de masterNav en bas de la navbar
     // !!!!! ADAPTER POUR MOBILE !!!!!
-    $('#masterNav .navbar-nav').each(function(){
-        $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
-    });
+    if($(window).width()>=768){
+        $('#masterNav .navbar-nav').each(function(){
+            $(this).css('margin-top', ($('.navbar').height()-$(this).outerHeight()));
+        });
+    }
 
     // positionnement du logo pour la deployNav
     $('#logo_deploy').css('left', ($(window).width()-$('#main').outerWidth())/2-$('#logo_deploy').outerWidth());
@@ -91,6 +89,8 @@ function placement_habillage(){
         // }
         if($(window).width()<970){
             $('#main').css('margin-top', ($('#main').outerWidth()/970)*150+'px');
+        }else{
+            $('#main').css('margin-top', '150px');
         }
     }else{
         $('#pubRow .box:first').css('margin-top', '0');
